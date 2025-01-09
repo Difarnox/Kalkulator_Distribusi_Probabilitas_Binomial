@@ -5,9 +5,9 @@
 /* GLOBAL STYLING */
 body {
     font-family: 'Roboto', sans-serif; /* Menggunakan font Roboto */
-    font-size: 1.2em; /* Ukuran font dasar */
+    font-size: 1em; /* Ukuran font normal */
     margin: 0; /* Menghapus margin default */
-    padding: 30px; /* Memberikan padding global */
+    padding: 20px; /* Mengurangi padding global */
     display: flex; /* Flexbox untuk tata letak */
     flex-direction: column; /* Elemen ditata secara vertikal */
     justify-content: center; /* Pusatkan secara horizontal */
@@ -20,6 +20,7 @@ body {
 /* Custom Scrollbar */
 body::-webkit-scrollbar {
     width: 4px; /* Lebar scrollbar lebih kecil */
+    height: 4px;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -34,11 +35,11 @@ body::-webkit-scrollbar-track {
 /* KALKULATOR CONTAINER */
 .container {
     text-align: center; /* Teks rata tengah */
-    width: 100%; /* Lebar 100% dari viewport */
-    max-width: 750px; /* Lebar maksimal kalkulator */
+    width: 90%; /* Lebar 90% dari viewport */
+    max-width: 650px; /* Lebar maksimal kalkulator dikurangi */
     margin: 0 auto; /* Margin vertikal sangat dekat dan horizontal auto */
     background-color: #ffffff; /* Warna latar belakang kalkulator */
-    padding: 20px; /* Padding dalam container */
+    padding: 15px; /* Padding dalam container dikurangi */
     border-radius: 10px; /* Sudut melengkung */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan lembut */
 }
@@ -47,7 +48,7 @@ body::-webkit-scrollbar-track {
 h1 {
     margin-bottom: 10px; /* Jarak bawah 10px */
     color: #000000; /* Warna teks hitam */
-    font-size: 2em; /* Ukuran font besar */
+    font-size: 1.5em; /* Ukuran font besar */
     font-weight: 700; /* Tebal */
 }
 
@@ -56,7 +57,7 @@ p {
     margin-bottom: 20px; /* Jarak bawah 20px */
     color: #000000; /* Warna teks hitam */
     line-height: 1.4; /* Spasi antar baris */
-    font-size: 1.2em; /* Ukuran font normal */
+    font-size: 1em; /* Ukuran font normal */
     font-weight: 400; /* Normal */
 }
 
@@ -75,6 +76,8 @@ form {
     align-items: center; /* Elemen sejajar secara vertikal */
     margin-bottom: 10px; /* Jarak bawah lebih kecil */
     width: 100%; /* Lebar penuh */
+    padding-top: 10px; /* Ruang atas ditambah */
+    padding-bottom: 10px; /* Ruang bawah ditambah */
 }
 
 /* Gaya untuk label */
@@ -82,7 +85,7 @@ label {
     color: #000000; /* Warna teks hitam */
     flex: 1; /* Label mengambil seluruh ruang yang tersedia */
     text-align: left; /* Teks rata kiri */
-    font-size: 1.3em; /* Ukuran font normal */
+    font-size: 1em; /* Ukuran font normal */
     font-weight: 400; /* Normal */
     margin-left: 0; /* Label mentok ke sisi kiri */
 }
@@ -93,7 +96,7 @@ input {
     flex: 1; /* Input mengambil seluruh ruang yang tersedia */
     border: 1px solid #ccc; /* Border abu-abu */
     border-radius: 5px; /* Sudut melengkung */
-    font-size: 1.3em; /* Ukuran font normal */
+    font-size: 1em; /* Ukuran font normal */
     font-family: 'Roboto', sans-serif; /* Font Roboto */
     text-align: left; /* Input rata kanan */
     margin-right: 0; /* Input mentok ke sisi kanan */
@@ -115,7 +118,7 @@ button {
     border: none; /* Menghapus border */
     border-radius: 5px; /* Sudut melengkung */
     cursor: pointer; /* Kursor berubah menjadi pointer */
-    font-size: 1.3em; /* Ukuran font normal */
+    font-size: 1em; /* Ukuran font normal */
     font-family: 'Roboto', sans-serif; /* Font Roboto */
     font-weight: 700; /* Tebal */
 }
@@ -129,23 +132,34 @@ button:hover {
 #result {
     display: none; /* Sembunyikan elemen secara default */
     margin-top: 10px; /* Jarak atas 10px */
-    padding: 20px; /* Padding dalam hasil */
+    padding: 15px; /* Padding dalam hasil dikurangi */
     background: #ffffff; /* Warna latar belakang sama dengan kalkulator */
     border-radius: 10px; /* Sudut melengkung sama dengan kalkulator */
     color: #000000; /* Warna teks hitam */
-    font-size: 1.3em; /* Ukuran font lebih besar sedikit */
+    font-size: 1em; /* Ukuran font lebih besar sedikit */
     text-align: left; /* Teks rata kiri */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan lembut */
-    width: 100%; /* Lebar penuh */
-    max-width: 750px; /* Lebar maksimal sama dengan kalkulator */
+    width: 90%; /* Lebar 90% dari viewport */
+    max-width: 650px; /* Lebar maksimal sama dengan kalkulator */
     margin-left: auto; /* Tengah horizontal */
     margin-right: auto; /* Tengah horizontal */
+    overflow: auto;
+}
+#result::-webkit-scrollbar {
+    width: 4px; height: 4px; /* Tambahkan ini untuk scroll horizontal */
+} 
+
+#result::-webkit-scrollbar-thumb {
+    background-color: #228B22; border-radius: 10px;
+}
+#result::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0);
 }
 
 #result h2 {
     margin-top: 0; /* Menghapus margin atas */
     color: #000000; /* Warna teks hitam */
-    font-size: 1.3em; /* Ukuran font besar */
+    font-size: 1em; /* Ukuran font besar */
     font-weight: 700; /* Tebal */
 }
 
