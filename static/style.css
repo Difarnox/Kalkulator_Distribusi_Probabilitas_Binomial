@@ -1,0 +1,191 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap'); /* Font untuk formula */
+
+/* GLOBAL STYLING */
+body {
+    font-family: 'Roboto', sans-serif; /* Menggunakan font Roboto */
+    font-size: 1.2em; /* Ukuran font dasar */
+    margin: 0; /* Menghapus margin default */
+    padding: 30px; /* Memberikan padding global */
+    display: flex; /* Flexbox untuk tata letak */
+    flex-direction: column; /* Elemen ditata secara vertikal */
+    justify-content: center; /* Pusatkan secara horizontal */
+    align-items: center; /* Pusatkan secara vertikal */
+    min-height: 50vh; /* Tinggi minimum 50% viewport */
+    background: url('https://img.freepik.com/free-vector/wavy-background-colorful-modern-design_677411-3099.jpg?t=st=1736301087~exp=1736304687~hmac=5a54db865052bfe0851772a446069bce8d17076661ae8130c7100f897c51a116&w=900') no-repeat center center fixed; /* Menggunakan gambar sebagai latar belakang dengan posisi tetap */
+    background-size: cover; /* Mengatur ukuran gambar agar menutup seluruh area */
+}
+
+/* Custom Scrollbar */
+body::-webkit-scrollbar {
+    width: 4px; /* Lebar scrollbar lebih kecil */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #228B22; /* Warna scrollbar hijau daun */
+    border-radius: 10px; /* Sudut melengkung */
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0); /* Warna track scrollbar transparan */
+}
+
+/* KALKULATOR CONTAINER */
+.container {
+    text-align: center; /* Teks rata tengah */
+    width: 100%; /* Lebar 100% dari viewport */
+    max-width: 750px; /* Lebar maksimal kalkulator */
+    margin: 0 auto; /* Margin vertikal sangat dekat dan horizontal auto */
+    background-color: #ffffff; /* Warna latar belakang kalkulator */
+    padding: 20px; /* Padding dalam container */
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan lembut */
+}
+
+/* Gaya untuk judul */
+h1 {
+    margin-bottom: 10px; /* Jarak bawah 10px */
+    color: #000000; /* Warna teks hitam */
+    font-size: 2em; /* Ukuran font besar */
+    font-weight: 700; /* Tebal */
+}
+
+/* Gaya untuk paragraf deskripsi */
+p {
+    margin-bottom: 20px; /* Jarak bawah 20px */
+    color: #000000; /* Warna teks hitam */
+    line-height: 1.4; /* Spasi antar baris */
+    font-size: 1.2em; /* Ukuran font normal */
+    font-weight: 400; /* Normal */
+}
+
+/* FORM STYLING */
+form {
+    display: flex; /* Flexbox untuk tata letak */
+    flex-direction: column; /* Elemen ditata secara vertikal */
+    align-items: center; /* Elemen rata tengah */
+    width: 100%; /* Lebar penuh */
+}
+
+/* Gaya untuk grup form */
+.form-group {
+    display: flex; /* Flexbox untuk tata letak */
+    justify-content: space-between; /* Label dan input berada di sisi berbeda */
+    align-items: center; /* Elemen sejajar secara vertikal */
+    margin-bottom: 10px; /* Jarak bawah lebih kecil */
+    width: 100%; /* Lebar penuh */
+}
+
+/* Gaya untuk label */
+label {
+    color: #000000; /* Warna teks hitam */
+    flex: 1; /* Label mengambil seluruh ruang yang tersedia */
+    text-align: left; /* Teks rata kiri */
+    font-size: 1.3em; /* Ukuran font normal */
+    font-weight: 400; /* Normal */
+    margin-left: 0; /* Label mentok ke sisi kiri */
+}
+
+/* Gaya untuk input */
+input {
+    padding: 8px; /* Padding dalam input */
+    flex: 1; /* Input mengambil seluruh ruang yang tersedia */
+    border: 1px solid #ccc; /* Border abu-abu */
+    border-radius: 5px; /* Sudut melengkung */
+    font-size: 1.3em; /* Ukuran font normal */
+    font-family: 'Roboto', sans-serif; /* Font Roboto */
+    text-align: left; /* Input rata kanan */
+    margin-right: 0; /* Input mentok ke sisi kanan */
+    max-width: 250px; /* Batasi lebar maksimal input */
+}
+
+/* BUTTON STYLING */
+.button-group {
+    display: flex; /* Flexbox untuk tata letak */
+    justify-content: center; /* Tombol rata tengah */
+    gap: 10px; /* Jarak antar tombol */
+}
+
+/* BUTTON STYLING */
+button {
+    padding: 10px 20px; /* Padding dalam tombol */
+    background-color: #228B22; /* Warna hijau daun */
+    color: white; /* Warna teks putih */
+    border: none; /* Menghapus border */
+    border-radius: 5px; /* Sudut melengkung */
+    cursor: pointer; /* Kursor berubah menjadi pointer */
+    font-size: 1.3em; /* Ukuran font normal */
+    font-family: 'Roboto', sans-serif; /* Font Roboto */
+    font-weight: 700; /* Tebal */
+}
+
+/* Efek hover pada tombol */
+button:hover {
+    background-color: #006400; /* Warna hijau lebih gelap */
+}
+
+/* RESULT STYLING */
+#result {
+    display: none; /* Sembunyikan elemen secara default */
+    margin-top: 10px; /* Jarak atas 10px */
+    padding: 20px; /* Padding dalam hasil */
+    background: #ffffff; /* Warna latar belakang sama dengan kalkulator */
+    border-radius: 10px; /* Sudut melengkung sama dengan kalkulator */
+    color: #000000; /* Warna teks hitam */
+    font-size: 1.3em; /* Ukuran font lebih besar sedikit */
+    text-align: left; /* Teks rata kiri */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan lembut */
+    width: 100%; /* Lebar penuh */
+    max-width: 750px; /* Lebar maksimal sama dengan kalkulator */
+    margin-left: auto; /* Tengah horizontal */
+    margin-right: auto; /* Tengah horizontal */
+}
+
+#result h2 {
+    margin-top: 0; /* Menghapus margin atas */
+    color: #000000; /* Warna teks hitam */
+    font-size: 1.3em; /* Ukuran font besar */
+    font-weight: 700; /* Tebal */
+}
+
+/* Daftar langkah-langkah */
+#result ul {
+    margin: 10px 0 0; /* Jarak atas 10px */
+    padding-left: 20px; /* Padding kiri 20px */
+}
+
+#result li {
+    margin-bottom: 10px; /* Jarak bawah 10px */
+}
+
+/* FORMULA STYLING */
+.formula {
+    font-style: italic; /* Gaya miring */
+    font-family: 'STIX Two Math', 'Cambria Math', 'Roboto', sans-serif; /* Font untuk formula */
+    color: #000000; /* Warna teks hitam */
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .form-group {
+        flex-direction: column; /* Elemen ditata vertikal */
+        align-items: stretch; /* Elemen meluas penuh */
+    }
+
+    label, input {
+        width: 100%; /* Lebar penuh */
+    }
+
+    button {
+        width: 100%; /* Tombol lebar penuh */
+    }
+
+    #result {
+        padding: 20px;
+    }
+}
